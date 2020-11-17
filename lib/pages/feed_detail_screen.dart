@@ -17,6 +17,7 @@ class FeedDetailScreen extends StatelessWidget {
     final isVideo = data.type == 'video';
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Stack(
@@ -103,7 +104,7 @@ class FeedDetailScreen extends StatelessWidget {
                         type: 'article',
                         viewing: 120,
                         imageUrl:
-                            'https://avatars.mds.yandex.net/get-zen_doc/1945572/pub_5d5fd0cf06cc4600ae1a4233_5d5fde4935ca3100ad26ab7e/scale_1200',
+                            'https://help-yourself.ru/wp-content/uploads/2019/11/0-15.jpg',
                       ),
                     )
                   ],

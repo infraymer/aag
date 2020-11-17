@@ -1,8 +1,10 @@
 import 'package:aag/models/feed.dart';
+import 'package:aag/pages/feed_detail_screen.dart';
 import 'package:aag/widgets/header_feed_widget.dart';
 import 'package:aag/widgets/main_drawer.dart';
 import 'package:aag/widgets/main_feed_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ArticleScreen extends StatelessWidget {
   final data = <Feed>[
@@ -19,11 +21,13 @@ class ArticleScreen extends StatelessWidget {
     ),
     MainFeed(
       id: "1",
-      title: "Грицкевич Е.Ю. - Эндокринологические предпосылки возникновения патологических состояний ЖКТ у беременных",
+      title:
+          "Грицкевич Е.Ю. - Эндокринологические предпосылки возникновения патологических состояний ЖКТ у беременных",
       date: "24.10.2020, 05:00",
       type: 'article',
       viewing: 56,
-      imageUrl: 'https://avatars.mds.yandex.net/get-zen_doc/1907561/pub_5d1ef9d0cbf26800ad3e6b02_5d1efae0c3337d00adbc5d0d/scale_1200',
+      imageUrl:
+          'https://avatars.mds.yandex.net/get-zen_doc/1907561/pub_5d1ef9d0cbf26800ad3e6b02_5d1efae0c3337d00adbc5d0d/scale_1200',
     ),
     MainFeed(
       id: "2",
@@ -67,7 +71,13 @@ class ArticleScreen extends StatelessWidget {
 
           if (item is HeaderFeed) return HeaderFeedWidget();
 
-          if (item is MainFeed) return MainFeedWidget(data: item);
+          if (item is MainFeed)
+            return GestureDetector(
+              child: MainFeedWidget(data: item),
+              onTap: () {
+                Get.to(FeedDetailScreen(data: item));
+              },
+            );
 
           return SizedBox();
         },
