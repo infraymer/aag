@@ -46,7 +46,7 @@ final mainDrawer = Drawer(
           ),
           DrawerItemWidget(
             icon: Icons.settings,
-            title: 'Найстройки',
+            title: 'Настройки',
           ),
         ],
       ),
